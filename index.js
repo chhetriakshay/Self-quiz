@@ -65,3 +65,53 @@ if(x=="yes")
   }
 }
 console.log("Your final score is ", score);
+
+if(score>=3)
+{
+  console.log(chalk.green("Congratulations!! You now are about to enter level Two"));
+
+   function lvl2(question,answer)
+ {
+  var init= readlineSync.question(question);
+  if(init==answer)
+  {
+    console.log(chalk.green("Congratualtions!!! You are correct"));
+    score=score+1;
+  }
+  else
+  {
+    console.log(chalk.red("Sorry!!! You are wrong"));
+    score=score;
+  }
+
+ }
+ questionOne=
+ {
+  question: "What is the name of my College? ",
+  answer:"RNSIT",
+ }
+ questionTwo=
+ {
+  question: "What plant would I love to have in my house? ",
+  answer:"Peace Lily",
+ }
+ questionThree=
+ {
+  question: "Which reptile do I fear the most? ",
+  answer:"Snake",
+ }
+ var ques= [questionOne,questionTwo,questionThree];
+ for(i=0;i<ques.length;i++)
+ {
+  var store=ques[i];
+  console.log("\n");
+  lvl2(store.question,store.answer)
+ }
+ console.log("Your final score is ", score);
+console.log("Thank You for Playing", name);
+}
+else
+{
+  console.log("Thank You for Playing", name)
+}
+
